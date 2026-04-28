@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fat Loss Complete Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Segoe UI',sans-serif;background:#0C0C0C;color:#E8E8E8;min-height:100vh;padding:20px 14px;-webkit-font-smoothing:antialiased}
+.mono{font-family:'Space Mono',monospace}
+.grad{-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hide{display:none!important}
+button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;outline:none;transition:all .2s}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:3px;outline:none;cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#4ECDC4;cursor:pointer;border:2px solid #0C0C0C}
+.card{background:#141414;border-radius:14px;border:1px solid #1e1e1e}
+.flex{display:flex}.gap4{gap:4px}.gap5{gap:5px}.gap6{gap:6px}.gap7{gap:7px}.gap8{gap:8px}.gap10{gap:10px}.gap12{gap:12px}
+.col{flex-direction:column}.center{align-items:center}.between{justify-content:space-between}
+.wrap{flex-wrap:wrap}.grow{flex:1}.shrink0{flex-shrink:0}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px}
+.tac{text-align:center}.tar{text-align:right}
+.w100{width:100%}.ovxa{overflow-x:auto}
+.fw6{font-weight:600}.fw7{font-weight:700}
+.fs10{font-size:10px}.fs11{font-size:11px}.fs12{font-size:12px}.fs13{font-size:13px}.fs14{font-size:14px}.fs15{font-size:15px}.fs16{font-size:16px}.fs17{font-size:17px}.fs18{font-size:18px}.fs20{font-size:20px}.fs22{font-size:22px}.fs26{font-size:26px}
+.c888{color:#888}.c666{color:#666}.c555{color:#555}.c999{color:#999}.cbbb{color:#bbb}.c777{color:#777}.cfff{color:#fff}
+.mt2{margin-top:2px}.mt3{margin-top:3px}.mt4{margin-top:4px}.mt8{margin-top:8px}.mt10{margin-top:10px}.mt12{margin-top:12px}.mt14{margin-top:14px}.mt16{margin-top:16px}
+.mb3{margin-bottom:3px}.mb6{margin-bottom:6px}.mb8{margin-bottom:8px}.mb10{margin-bottom:10px}.mb12{margin-bottom:12px}.mb14{margin-bottom:14px}.mb16{margin-bottom:16px}
+.p3{padding:3px}.p14{padding:14px 16px}
+.r10{border-radius:10px}.r12{border-radius:12px}.r14{border-radius:14px}.r16{border-radius:16px}
+.ls05{letter-spacing:.5px}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.fadeIn{animation:fadeIn .3s ease}
+.ex-card{overflow:hidden;transition:all .3s}
+.ex-top{padding:11px 14px;display:flex;align-items:center;gap:10px;cursor:pointer}
+.ex-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:4px}
+.ex-tag{font-size:10px;background:#1e1e1e;padding:2px 6px;border-radius:5px}
+.arrow{color:#555;font-size:14px;transition:transform .2s}
+.arrow.open{transform:rotate(180deg)}
+.day-btn{flex:1 0 auto;min-width:56px;padding:8px 6px;border-radius:10px;font-size:11px;font-weight:600}
+.month-btn{padding:9px 12px;border-radius:10px;font-size:13px;font-weight:700;min-width:48px}
+.tab-btn{flex:1;padding:10px;border-radius:10px;font-size:13px;font-weight:700}
+.sub-tab{flex:1;padding:7px 8px;border-radius:8px;font-size:11px;font-weight:600}
+.stat-card{border-radius:12px;padding:10px 12px;text-align:center;background:#141414}
+.form-box{display:flex;gap:12px;align-items:center;border-radius:12px;padding:12px 14px}
+.done-btn{margin-top:8px;width:100%;padding:9px;border-radius:10px;font-weight:700;font-size:12px;transition:all .2s}
+.meal-card{background:#141414;border-radius:14px;border:1px solid #1e1e1e;overflow:hidden;transition:all .3s}
+.meal-header{padding:12px 14px;display:flex;align-items:center;gap:12px;cursor:pointer}
+.meal-time{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.macro-pill{font-size:10px;padding:3px 8px;border-radius:6px;font-weight:600}
+.food-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #1a1a1a}
+.food-item:last-child{border-bottom:none}
+.protein-badge{background:#FF6B3520;color:#FF6B35;font-size:9px;padding:2px 6px;border-radius:4px;font-weight:700}
+.scroll-x{display:flex;gap:5px;overflow-x:auto;padding-bottom:4px}
+.scroll-x::-webkit-scrollbar{display:none}
+</style>
+</head>
+<body>
+<div id="app">
+  <!-- Header -->
+  <div class="tac mb16">
+    <div id="mainTitle" class="mono fs22 fw7 grad" style="background:linear-gradient(135deg,#4ECDC4,#fff)">5-DAY FAT LOSS PLAN</div>
+    <div class="fs12 c666 mt3">24y · 170cm · 80kg · 5 days gym</div>
+  </div>
+
+  <!-- Main Tabs -->
+  <div class="flex gap4 mb16 card p3" style="border:none">
+    <button class="tab-btn" data-tab="workout" onclick="switchTab('workout')" style="background:#4ECDC4;color:#000">🏋️ Workout</button>
+    <button class="tab-btn" data-tab="projector" onclick="switchTab('projector')" style="background:transparent;color:#666">📊 Projector</button>
+    <button class="tab-btn" data-tab="diet" onclick="switchTab('diet')" style="background:transparent;color:#666">🥗 Diet Plan</button>
+  </div>
+
+  <!-- ===================== WORKOUT TAB ===================== -->
+  <div id="tab-workout">
+    <div id="dayTabs" class="scroll-x mb14"></div>
+    <div id="dayHeader" class="card flex between center mb10" style="border-left:4px solid;padding:14px 16px"></div>
+    <div id="exerciseList" class="flex col gap7"></div>
+    <div class="tac mt14 fs11" style="color:#444">Tap exercise to see form · Rest Sat & Sun</div>
+  </div>
+
+  <!-- ===================== PROJECTOR TAB ===================== -->
+  <div id="tab-projector" class="hide">
+    <div class="card mb12 p14">
+      <div class="fs11 c888 fw6 ls05 mb8">SELECT DURATION</div>
+      <div id="monthBtns" class="flex gap5 wrap"></div>
+      <div class="mt14">
+        <div class="flex between center mb6">
+          <span class="fs11 c888 fw6 ls05">DAILY CALORIES</span>
+          <span id="calLabel" class="mono fs16 fw7" style="color:#4ECDC4">1900 kcal</span>
+        </div>
+        <input type="range" id="calSlider" min="1500" max="2500" step="50" value="1900" oninput="updateProjection()">
+        <div class="flex between fs10 c555 mt3"><span>1,500</span><span>Aggressive ← → Moderate</span><span>2,500</span></div>
+      </div>
+    </div>
+    <div id="projStats" class="grid3 mb12"></div>
+    <div class="flex gap4 mb10 card p3" style="border:none">
+      <button class="sub-tab" data-pv="curve" onclick="switchProjView('curve')" style="background:#4ECDC4;color:#000">Weight Curve</button>
+      <button class="sub-tab" data-pv="monthly" onclick="switchProjView('monthly')" style="background:transparent;color:#777">Monthly</button>
+      <button class="sub-tab" data-pv="timeline" onclick="switchProjView('timeline')" style="background:transparent;color:#777">Timeline</button>
+    </div>
+    <div id="projContent"></div>
+  </div>
+
+  <!-- ===================== DIET TAB ===================== -->
+  <div id="tab-diet" class="hide">
+    <!-- Diet calorie selector -->
+    <div class="card mb12 p14">
+      <div class="flex between center">
+        <div>
+          <div class="fs17 fw7 cfff">🥗 Daily Meal Plan</div>
+          <div class="fs12 c888 mt2">High protein · Fat loss optimized</div>
+        </div>
+        <div class="tar">
+          <div class="fs20 fw7" style="color:#4ECDC4" id="dietCalTotal">1,900</div>
+          <div class="fs10 c555">kcal/day</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Macros Overview -->
+    <div class="grid3 mb12" id="macroCards"></div>
+
+    <!-- Diet Sub-tabs -->
+    <div class="flex gap4 mb10 card p3" style="border:none">
+      <button class="sub-tab" data-dv="meals" onclick="switchDietView('meals')" style="background:#4ECDC4;color:#000">Meals</button>
+      <button class="sub-tab" data-dv="protein" onclick="switchDietView('protein')" style="background:transparent;color:#777">Protein Sources</button>
+      <button class="sub-tab" data-dv="tips" onclick="switchDietView('tips')" style="background:transparent;color:#777">Tips</button>
+    </div>
+
+    <div id="dietContent"></div>
+  </div>
+
+  <div class="tac mt16 fs11" style="color:#333;padding-bottom:16px">Results assume consistent training & calorie deficit</div>
+</div>
+
+<script>
+const STATS={age:24,height:170,weight:80,bmr:1748,tdee:2710};
+let activeDay=0,expandedEx=-1,checkedEx={},months=1,calories=1900,projView='curve',dietView='meals';
+
+const workouts=[
+  {day:"Day 1",title:"Full Body Burn",focus:"Compound Lifts + HIIT",emoji:"🔥",color:"#FF6B35",exercises:[
+    {name:"Barbell Back Squat",sets:"4",reps:"10-12",rest:"60s",note:"Feet shoulder-width, chest up, break parallel",icon:"squat"},
+    {name:"Dumbbell Bench Press",sets:"4",reps:"10-12",rest:"60s",note:"3s negative down, drive up explosively",icon:"bench"},
+    {name:"Bent-Over Barbell Row",sets:"3",reps:"12",rest:"60s",note:"45° torso angle, pull to navel",icon:"row"},
+    {name:"Dumbbell Walking Lunges",sets:"3",reps:"12/leg",rest:"45s",note:"Long stride, front knee over ankle",icon:"lunge"},
+    {name:"Plank Hold",sets:"3",reps:"45s",rest:"30s",note:"Flat back, squeeze glutes & abs",icon:"plank"},
+    {name:"HIIT: Battle Ropes / Bike Sprints",sets:"6",reps:"30s on/30s off",rest:"—",note:"All-out effort, max heart rate",icon:"hiit"}
+  ]},
+  {day:"Day 2",title:"Upper Body Shred",focus:"Push/Pull Supersets + Core",emoji:"💪",color:"#4ECDC4",exercises:[
+    {name:"Overhead Press (Barbell/DB)",sets:"4",reps:"10",rest:"60s",note:"Full lockout, brace core throughout",icon:"ohp"},
+    {name:"Lat Pulldown",sets:"4",reps:"12",rest:"60s",note:"Wide grip, pull to upper chest",icon:"pulldown"},
+    {name:"Superset: Incline Fly + Face Pull",sets:"3",reps:"12 each",rest:"45s",note:"No rest between exercises",icon:"fly"},
+    {name:"Cable Tricep Pushdown",sets:"3",reps:"15",rest:"30s",note:"Pin elbows, squeeze at bottom",icon:"pushdown"},
+    {name:"Dumbbell Bicep Curls",sets:"3",reps:"12",rest:"30s",note:"Supinate at top, no swinging",icon:"curl"},
+    {name:"Hanging Knee Raises",sets:"3",reps:"15",rest:"30s",note:"Slow and controlled, curl pelvis",icon:"knee_raise"},
+    {name:"Finisher: Rowing Machine",sets:"1",reps:"10 min",rest:"—",note:"Moderate-high, 24-28 strokes/min",icon:"rowing"}
+  ]},
+  {day:"Day 3",title:"Lower Body Blast",focus:"Legs + Glutes + Cardio",emoji:"🦵",color:"#FF6B6B",exercises:[
+    {name:"Romanian Deadlift",sets:"4",reps:"10",rest:"60s",note:"Push hips back, bar close to shins",icon:"rdl"},
+    {name:"Leg Press",sets:"4",reps:"12",rest:"60s",note:"Feet shoulder width, lower to 90°",icon:"leg_press"},
+    {name:"Bulgarian Split Squat (DB)",sets:"3",reps:"10/leg",rest:"45s",note:"Rear foot on bench, straight torso",icon:"split_squat"},
+    {name:"Leg Curl Machine",sets:"3",reps:"12",rest:"45s",note:"3-sec eccentric, full curl",icon:"leg_curl"},
+    {name:"Calf Raises (Standing)",sets:"4",reps:"15",rest:"30s",note:"2-sec pause at peak, full stretch",icon:"calf_raise"},
+    {name:"Mountain Climbers",sets:"4",reps:"30s",rest:"30s",note:"Hips level, drive knees to chest",icon:"mountain"},
+    {name:"Treadmill Incline Walk",sets:"1",reps:"15 min",rest:"—",note:"12-15% incline, 5-6 km/h",icon:"incline"}
+  ]},
+  {day:"Day 4",title:"Push & Core Torch",focus:"Chest + Shoulders + Abs",emoji:"⚡",color:"#A855F7",exercises:[
+    {name:"Flat Barbell Bench Press",sets:"4",reps:"8-10",rest:"90s",note:"Arch back slightly, bar to lower chest",icon:"bench"},
+    {name:"Dumbbell Lateral Raises",sets:"4",reps:"15",rest:"30s",note:"Slight bend in elbows, raise to shoulder",icon:"lateral"},
+    {name:"Cable Chest Fly (Low→High)",sets:"3",reps:"12",rest:"45s",note:"Arc motion, bring hands together",icon:"cable_fly"},
+    {name:"Arnold Press",sets:"3",reps:"10",rest:"60s",note:"Start palms facing you, rotate pressing",icon:"arnold"},
+    {name:"Ab Circuit: Crunch→Dead Bug→Twist",sets:"3",reps:"15 each",rest:"30s",note:"No rest between the three exercises",icon:"crunch"},
+    {name:"HIIT: Kettlebell Swings",sets:"5",reps:"20",rest:"30s",note:"Hinge hips, snap forward, squeeze glutes",icon:"kb_swing"}
+  ]},
+  {day:"Day 5",title:"Pull & Metabolic",focus:"Back + Biceps + Cardio",emoji:"🏋️",color:"#F59E0B",exercises:[
+    {name:"Deadlift (Conventional)",sets:"4",reps:"6-8",rest:"90s",note:"Neutral spine, drive through heels",icon:"deadlift"},
+    {name:"Seated Cable Row",sets:"4",reps:"12",rest:"60s",note:"Chest out, pull handle to lower chest",icon:"seated_row"},
+    {name:"Single Arm DB Row",sets:"3",reps:"10/arm",rest:"45s",note:"Non-working hand on bench",icon:"single_row"},
+    {name:"EZ Bar Curl",sets:"3",reps:"12",rest:"45s",note:"Controlled tempo, full extension",icon:"curl"},
+    {name:"Hammer Curls",sets:"3",reps:"12",rest:"30s",note:"Neutral grip, no swing",icon:"hammer"},
+    {name:"Finisher: Burpees+Box Jumps+KB",sets:"3 rds",reps:"10 each",rest:"60s",note:"Move fast but keep solid form",icon:"burpee"}
+  ]}
+];
+
+const meals=[
+  {time:"7:30 AM",name:"Breakfast",emoji:"🌅",cal:450,protein:35,carbs:40,fat:15,color:"#FF6B35",
+    foods:[
+      {name:"Egg whites (5) + 1 whole egg scrambled",cal:180,protein:25,emoji:"🥚",isProtein:true},
+      {name:"Oats (40g) with banana",cal:200,protein:6,emoji:"🥣",isProtein:false},
+      {name:"Black coffee or green tea",cal:5,protein:0,emoji:"☕",isProtein:false},
+      {name:"Handful of almonds (10g)",cal:65,protein:4,emoji:"🥜",isProtein:false}
+    ]},
+  {time:"10:30 AM",name:"Mid-Morning Snack",emoji:"🍎",cal:200,protein:25,carbs:15,fat:6,color:"#4ECDC4",
+    foods:[
+      {name:"Greek yogurt (150g, non-fat)",cal:90,protein:15,emoji:"🥛",isProtein:true},
+      {name:"Mixed berries (80g)",cal:40,protein:1,emoji:"🫐",isProtein:false},
+      {name:"Whey protein scoop (half)",cal:60,protein:12,emoji:"🥤",isProtein:true}
+    ]},
+  {time:"1:00 PM",name:"Lunch",emoji:"☀️",cal:500,protein:42,carbs:45,fat:14,color:"#FF6B6B",
+    foods:[
+      {name:"Grilled chicken breast (150g)",cal:230,protein:35,emoji:"🍗",isProtein:true},
+      {name:"Brown rice (80g cooked)",cal:100,protein:2,emoji:"🍚",isProtein:false},
+      {name:"Mixed salad + olive oil (1 tsp)",cal:80,protein:2,emoji:"🥗",isProtein:false},
+      {name:"Steamed broccoli (100g)",cal:35,protein:3,emoji:"🥦",isProtein:false},
+      {name:"Lemon water",cal:5,protein:0,emoji:"🍋",isProtein:false}
+    ]},
+  {time:"4:00 PM",name:"Pre-Workout",emoji:"⚡",cal:250,protein:28,carbs:25,fat:5,color:"#A855F7",
+    foods:[
+      {name:"Whey protein shake (1 scoop)",cal:120,protein:24,emoji:"🥤",isProtein:true},
+      {name:"Apple or banana",cal:95,protein:1,emoji:"🍌",isProtein:false},
+      {name:"Rice cakes (2)",cal:35,protein:1,emoji:"🍘",isProtein:false}
+    ]},
+  {time:"7:00 PM",name:"Dinner",emoji:"🌙",cal:420,protein:40,carbs:30,fat:14,color:"#F59E0B",
+    foods:[
+      {name:"Grilled fish / lean beef (150g)",cal:220,protein:32,emoji:"🐟",isProtein:true},
+      {name:"Sweet potato (100g)",cal:90,protein:2,emoji:"🍠",isProtein:false},
+      {name:"Stir-fried vegetables (150g)",cal:60,protein:3,emoji:"🥬",isProtein:false},
+      {name:"Cottage cheese (50g)",cal:50,protein:6,emoji:"🧀",isProtein:true}
+    ]},
+  {time:"9:00 PM",name:"Evening Snack",emoji:"🌜",cal:130,protein:22,carbs:5,fat:4,color:"#4ECDC4",
+    foods:[
+      {name:"Casein protein / Greek yogurt",cal:100,protein:20,emoji:"🥛",isProtein:true},
+      {name:"Handful of walnuts (8g)",cal:30,protein:2,emoji:"🥜",isProtein:false}
+    ]}
+];
+
+const proteinSources=[
+  {name:"Chicken Breast",per100g:31,cal:165,emoji:"🍗",tip:"Best lean protein source. Grill or bake, avoid frying.",serving:"150g = 46g protein"},
+  {name:"Eggs (Whole)",per100g:13,cal:155,emoji:"🥚",tip:"Complete protein with healthy fats. Use more whites for low cal.",serving:"3 eggs = 18g protein"},
+  {name:"Egg Whites",per100g:11,cal:52,emoji:"🍳",tip:"Pure protein, almost zero fat. Great for volume eating.",serving:"5 whites = 18g protein"},
+  {name:"Greek Yogurt (0% fat)",per100g:10,cal:59,emoji:"🥛",tip:"High protein dairy, great for snacks. Add berries for flavor.",serving:"200g = 20g protein"},
+  {name:"Whey Protein",per100g:80,cal:400,emoji:"🥤",tip:"Fast absorbing, best post-workout. 1 scoop = ~24g protein.",serving:"1 scoop = 24g protein"},
+  {name:"Casein Protein",per100g:75,cal:370,emoji:"🥛",tip:"Slow release, perfect before bed. Keeps you full longer.",serving:"1 scoop = 22g protein"},
+  {name:"Fish (Tilapia/Salmon)",per100g:26,cal:130,emoji:"🐟",tip:"Omega-3 rich (salmon). Tilapia is leaner option.",serving:"150g = 39g protein"},
+  {name:"Lean Beef (90/10)",per100g:26,cal:176,emoji:"🥩",tip:"Iron rich. Limit to 2-3x/week. Choose lean cuts.",serving:"150g = 39g protein"},
+  {name:"Turkey Breast",per100g:29,cal:135,emoji:"🦃",tip:"Very lean, great for meal prep. Works in wraps and salads.",serving:"150g = 43g protein"},
+  {name:"Cottage Cheese",per100g:11,cal:98,emoji:"🧀",tip:"Slow-digesting casein. Great evening snack with fruit.",serving:"150g = 17g protein"},
+  {name:"Lentils (Cooked)",per100g:9,cal:116,emoji:"🫘",tip:"Plant protein + fiber. Great for veggie meals. Combine with rice.",serving:"200g = 18g protein"},
+  {name:"Chickpeas (Cooked)",per100g:9,cal:164,emoji:"🫘",tip:"Versatile plant protein. Use in salads, curry, or hummus.",serving:"200g = 18g protein"},
+  {name:"Tuna (Canned)",per100g:26,cal:116,emoji:"🐟",tip:"Budget-friendly protein. Limit to 3 cans/week (mercury).",serving:"1 can = 30g protein"},
+  {name:"Paneer",per100g:18,cal:265,emoji:"🧀",tip:"Indian cottage cheese. Higher fat, use in moderation.",serving:"100g = 18g protein"},
+  {name:"Tofu (Firm)",per100g:8,cal:76,emoji:"🟫",tip:"Great plant option. Press well before cooking for best texture.",serving:"200g = 16g protein"}
+];
+
+function getIcon(type){
+  const icons={
+    squat:`<svg viewBox="0 0 60 80"><circle cx="30" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="30" y1="13" x2="30" y2="35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="35" x2="20" y2="50" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="20" y1="50" x2="18" y2="65" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="35" x2="40" y2="50" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="40" y1="50" x2="42" y2="65" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="20" x2="18" y2="25" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="20" x2="42" y2="25" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="10" y1="25" x2="50" y2="25" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><text x="30" y="77" text-anchor="middle" fill="#888" font-size="6">Squat down, chest up</text></svg>`,
+    bench:`<svg viewBox="0 0 70 70"><rect x="10" y="38" width="50" height="4" rx="2" fill="#444"/><circle cx="25" cy="33" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="25" y1="38" x2="50" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="42" x2="55" y2="55" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="42" x2="45" y2="55" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="25" y1="38" x2="20" y2="25" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="25" y1="38" x2="35" y2="25" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="15" y1="22" x2="40" y2="22" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><text x="35" y="67" text-anchor="middle" fill="#888" font-size="6">Press up, elbows 45°</text></svg>`,
+    row:`<svg viewBox="0 0 70 70"><circle cx="20" cy="18" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="22" y1="23" x2="40" y2="35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="40" y1="35" x2="35" y2="55" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="40" y1="35" x2="48" y2="55" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="28" x2="25" y2="45" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="28" x2="38" y2="48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="20" y1="45" x2="42" y2="48" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><text x="35" y="67" text-anchor="middle" fill="#888" font-size="6">Pull to belly, squeeze</text></svg>`,
+    lunge:`<svg viewBox="0 0 70 80"><circle cx="30" cy="10" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="30" y1="15" x2="30" y2="38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="38" x2="18" y2="55" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="18" y1="55" x2="15" y2="68" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="38" x2="45" y2="45" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="45" y1="45" x2="48" y2="60" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><rect x="19" y="28" width="5" height="8" rx="1" fill="#555"/><rect x="35" y="28" width="5" height="8" rx="1" fill="#555"/><text x="35" y="77" text-anchor="middle" fill="#888" font-size="6">Step forward, knee 90°</text></svg>`,
+    plank:`<svg viewBox="0 0 80 55"><circle cx="15" cy="18" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="18" y1="23" x2="60" y2="26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="60" y1="26" x2="68" y2="40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="15" y1="23" x2="15" y2="40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><text x="40" y="50" text-anchor="middle" fill="#888" font-size="6">Flat back, brace core</text></svg>`,
+    hiit:`<svg viewBox="0 0 70 70"><circle cx="30" cy="10" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="30" y1="15" x2="30" y2="33" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="33" x2="18" y2="50" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="33" x2="45" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="22" x2="18" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="22" x2="45" y2="15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M12 12 L16 8 L14 14" fill="#FF6B35" stroke="#FF6B35"/><path d="M48 9 L52 5 L50 11" fill="#FF6B35" stroke="#FF6B35"/><text x="35" y="68" text-anchor="middle" fill="#888" font-size="6">Max effort, explosive</text></svg>`,
+    ohp:`<svg viewBox="0 0 60 80"><circle cx="30" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="30" y1="17" x2="30" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="42" x2="22" y2="65" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="42" x2="38" y2="65" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="24" x2="18" y2="8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="24" x2="42" y2="8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="8" x2="48" y2="8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><text x="30" y="77" text-anchor="middle" fill="#888" font-size="6">Press overhead, lock out</text></svg>`,
+    pulldown:`<svg viewBox="0 0 70 80"><line x1="10" y1="5" x2="60" y2="5" stroke="#555" stroke-width="3"/><circle cx="35" cy="20" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="35" y1="25" x2="35" y2="48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="35" y1="48" x2="28" y2="65" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="35" y1="48" x2="42" y2="65" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="35" y1="30" x2="22" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="35" y1="30" x2="48" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><text x="35" y="77" text-anchor="middle" fill="#888" font-size="6">Pull to chest, wide grip</text></svg>`,
+    fly:`<svg viewBox="0 0 70 70"><rect x="12" y="30" width="46" height="4" rx="2" fill="#444"/><circle cx="30" cy="26" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="30" y1="30" x2="50" y2="34" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="30" x2="15" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="30" x2="48" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M20 22 Q30 10 42 22" stroke="#666" stroke-dasharray="2" fill="none" stroke-width="2.5"/><text x="35" y="63" text-anchor="middle" fill="#888" font-size="6">Arc wide, squeeze chest</text></svg>`,
+    pushdown:`<svg viewBox="0 0 60 80"><line x1="30" y1="2" x2="30" y2="10" stroke="#555" stroke-width="3"/><circle cx="30" cy="16" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="30" y1="21" x2="30" y2="45" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="45" x2="22" y2="65" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="45" x2="38" y2="65" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="30" x2="25" y2="38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="25" y1="38" x2="28" y2="48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="30" x2="35" y2="38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="35" y1="38" x2="32" y2="48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><text x="30" y="77" text-anchor="middle" fill="#888" font-size="6">Elbows locked, push down</text></svg>`,
+    curl:`<svg viewBox="0 0 60 80"><circle cx="30" cy="10" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="30" y1="15" x2="30" y2="40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="40" x2="22" y2="62" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="40" x2="38" y2="62" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="25" x2="24" y2="35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="24" y1="35" x2="22" y2="25" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="25" x2="36" y2="35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="36" y1="35" x2="38" y2="25" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><rect x="19" y="22" width="5" height="6" rx="1" fill="#555"/><rect x="36" y="22" width="5" height="6" rx="1" fill="#555"/><text x="30" y="75" text-anchor="middle" fill="#888" font-size="6">Curl up, no swinging</text></svg>`,
+    knee_raise:`<svg viewBox="0 0 60 75"><line x1="20" y1="2" x2="40" y2="2" stroke="#555" stroke-width="3"/><circle cx="30" cy="10" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="30" y1="15" x2="30" y2="38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="20" x2="20" y2="6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="20" x2="40" y2="6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="38" x2="22" y2="48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="22" y1="48" x2="20" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="38" x2="38" y2="48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="38" y1="48" x2="40" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><text x="30" y="63" text-anchor="middle" fill="#888" font-size="6">Raise knees to chest</text></svg>`,
+    rowing:`<svg viewBox="0 0 80 55"><rect x="20" y="28" width="40" height="6" rx="3" fill="#333"/><circle cx="35" cy="20" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="35" y1="25" x2="42" y2="31" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="42" y1="31" x2="50" y2="40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="42" y1="31" x2="35" y2="40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><text x="40" y="52" text-anchor="middle" fill="#888" font-size="6">Drive legs, pull handle</text></svg>`,
+    rdl:`<svg viewBox="0 0 70 75"><circle cx="22" cy="22" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="25" y1="25" x2="40" y2="32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="40" y1="32" x2="38" y2="52" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="40" y1="32" x2="46" y2="52" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="32" y1="28" x2="18" y2="32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="32" y1="28" x2="16" y2="37" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="10" y1="35" x2="22" y2="35" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><text x="35" y="67" text-anchor="middle" fill="#888" font-size="6">Hinge hips, feel hamstrings</text></svg>`,
+    leg_press:`<svg viewBox="0 0 80 65"><line x1="55" y1="12" x2="55" y2="52" stroke="#444" stroke-width="3"/><rect x="50" y="18" width="10" height="22" rx="2" fill="#333"/><circle cx="25" cy="28" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="28" y1="31" x2="35" y2="38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="35" y1="38" x2="45" y2="30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="45" y1="30" x2="50" y2="26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><text x="40" y="58" text-anchor="middle" fill="#888" font-size="6">Push platform, full depth</text></svg>`,
+    split_squat:`<svg viewBox="0 0 70 78"><rect x="48" y="40" width="15" height="4" rx="2" fill="#444"/><circle cx="30" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="30" y1="13" x2="30" y2="36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="36" x2="22" y2="52" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="22" y1="52" x2="20" y2="65" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="36" x2="42" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="42" y1="42" x2="50" y2="40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><text x="35" y="76" text-anchor="middle" fill="#888" font-size="6">Rear foot on bench</text></svg>`,
+    leg_curl:`<svg viewBox="0 0 80 50"><rect x="10" y="18" width="55" height="5" rx="2" fill="#444"/><circle cx="18" cy="14" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="20" y1="18" x2="55" y2="20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="55" y1="20" x2="58" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><text x="40" y="40" text-anchor="middle" fill="#888" font-size="6">Curl heels to glutes</text></svg>`,
+    calf_raise:`<svg viewBox="0 0 50 75"><circle cx="25" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="25" y1="13" x2="25" y2="38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="25" y1="38" x2="22" y2="52" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="25" y1="38" x2="28" y2="52" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><rect x="15" y="57" width="20" height="3" rx="1" fill="#555"/><text x="25" y="72" text-anchor="middle" fill="#888" font-size="6">Rise on toes, pause top</text></svg>`,
+    mountain:`<svg viewBox="0 0 80 55"><circle cx="15" cy="15" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="18" y1="19" x2="45" y2="25" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="45" y1="25" x2="65" y2="38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="15" y1="19" x2="15" y2="37" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="45" y1="25" x2="30" y2="32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><text x="40" y="50" text-anchor="middle" fill="#888" font-size="6">Alternate knees to chest</text></svg>`,
+    incline:`<svg viewBox="0 0 70 65"><line x1="10" y1="52" x2="60" y2="32" stroke="#333" stroke-width="3"/><circle cx="38" cy="16" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="38" y1="21" x2="40" y2="35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="40" y1="35" x2="32" y2="45" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="40" y1="35" x2="48" y2="41" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><text x="35" y="62" text-anchor="middle" fill="#888" font-size="6">12-15% incline, walk</text></svg>`,
+    lateral:`<svg viewBox="0 0 70 78"><circle cx="35" cy="10" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="35" y1="15" x2="35" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="35" y1="42" x2="28" y2="62" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="35" y1="42" x2="42" y2="62" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="35" y1="24" x2="15" y2="22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="35" y1="24" x2="55" y2="22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><rect x="11" y="20" width="5" height="5" rx="1" fill="#555"/><rect x="53" y="20" width="5" height="5" rx="1" fill="#555"/><text x="35" y="75" text-anchor="middle" fill="#888" font-size="6">Raise to shoulder height</text></svg>`,
+    cable_fly:`<svg viewBox="0 0 70 65"><line x1="5" y1="5" x2="5" y2="48" stroke="#444" stroke-width="3"/><line x1="65" y1="5" x2="65" y2="48" stroke="#444" stroke-width="3"/><circle cx="35" cy="10" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="35" y1="15" x2="35" y2="38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="35" y1="38" x2="28" y2="55" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="35" y1="38" x2="42" y2="55" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="35" y1="23" x2="18" y2="20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="18" y1="20" x2="5" y2="13" stroke="#666" stroke-dasharray="2" fill="none" stroke-width="2.5"/><line x1="35" y1="23" x2="52" y2="20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="52" y1="20" x2="65" y2="13" stroke="#666" stroke-dasharray="2" fill="none" stroke-width="2.5"/><text x="35" y="63" text-anchor="middle" fill="#888" font-size="6">Squeeze at center</text></svg>`,
+    arnold:`<svg viewBox="0 0 60 78"><circle cx="30" cy="10" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="30" y1="15" x2="30" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="42" x2="22" y2="62" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="42" x2="38" y2="62" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="24" x2="20" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="24" x2="40" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><rect x="17" y="9" width="5" height="5" rx="1" fill="#555"/><rect x="38" y="9" width="5" height="5" rx="1" fill="#555"/><path d="M22 20 Q30 8 38 20" stroke="#666" stroke-dasharray="2" fill="none" stroke-width="2.5"/><text x="30" y="75" text-anchor="middle" fill="#888" font-size="6">Rotate as you press up</text></svg>`,
+    crunch:`<svg viewBox="0 0 80 50"><circle cx="22" cy="10" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="25" y1="14" x2="40" y2="23" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="40" y1="23" x2="55" y2="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="55" y1="16" x2="58" y2="23" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="40" y1="23" x2="30" y2="30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="30" x2="35" y2="23" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><text x="40" y="44" text-anchor="middle" fill="#888" font-size="6">Elbow to opposite knee</text></svg>`,
+    kb_swing:`<svg viewBox="0 0 60 78"><circle cx="30" cy="10" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="30" y1="15" x2="30" y2="35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="35" x2="20" y2="50" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="20" y1="50" x2="18" y2="62" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="35" x2="40" y2="50" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="40" y1="50" x2="42" y2="62" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="22" x2="22" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="22" x2="38" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="30" cy="8" r="4" fill="#555" stroke="#777" stroke-width="1"/><text x="30" y="75" text-anchor="middle" fill="#888" font-size="6">Hip snap, squeeze glutes</text></svg>`,
+    deadlift:`<svg viewBox="0 0 60 78"><circle cx="30" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="30" y1="13" x2="30" y2="35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="35" x2="24" y2="52" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="24" y1="52" x2="22" y2="62" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="35" x2="36" y2="52" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="36" y1="52" x2="38" y2="62" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="22" x2="20" y2="35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="22" x2="40" y2="35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="35" x2="48" y2="35" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><text x="30" y="75" text-anchor="middle" fill="#888" font-size="6">Brace core, neutral spine</text></svg>`,
+    seated_row:`<svg viewBox="0 0 80 58"><rect x="8" y="25" width="20" height="4" rx="2" fill="#444"/><line x1="60" y1="12" x2="60" y2="48" stroke="#444" stroke-width="3"/><circle cx="30" cy="19" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="30" y1="24" x2="30" y2="29" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="29" x2="20" y2="39" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="29" x2="40" y2="39" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="25" x2="42" y2="27" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="42" y1="27" x2="60" y2="27" stroke="#666" stroke-dasharray="2" fill="none" stroke-width="2.5"/><text x="40" y="53" text-anchor="middle" fill="#888" font-size="6">Pull to lower chest</text></svg>`,
+    single_row:`<svg viewBox="0 0 80 58"><rect x="38" y="22" width="22" height="4" rx="2" fill="#444"/><circle cx="25" cy="15" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="28" y1="19" x2="45" y2="25" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="45" y1="25" x2="42" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="45" y1="25" x2="52" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="35" y1="22" x2="25" y2="32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><rect x="22" y="30" width="5" height="6" rx="1" fill="#555"/><text x="40" y="55" text-anchor="middle" fill="#888" font-size="6">One arm, squeeze back</text></svg>`,
+    hammer:`<svg viewBox="0 0 60 78"><circle cx="30" cy="10" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="30" y1="15" x2="30" y2="40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="40" x2="22" y2="60" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="40" x2="38" y2="60" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="25" x2="24" y2="35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="24" y1="35" x2="22" y2="25" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="25" x2="36" y2="35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="36" y1="35" x2="38" y2="25" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><rect x="20" y="22" width="3" height="8" rx="1" fill="#555"/><rect x="37" y="22" width="3" height="8" rx="1" fill="#555"/><text x="30" y="73" text-anchor="middle" fill="#888" font-size="6">Neutral grip, controlled</text></svg>`,
+    burpee:`<svg viewBox="0 0 80 58"><circle cx="20" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="20" y1="13" x2="20" y2="28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="20" y1="28" x2="15" y2="38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="20" y1="28" x2="28" y2="38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="20" y1="18" x2="12" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="20" y1="18" x2="28" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M16 6 L20 2 L24 6" fill="#F59E0B" stroke="#F59E0B"/><circle cx="55" cy="20" r="4" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="55" y1="24" x2="72" y2="27" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="64" y1="25" x2="64" y2="35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><text x="40" y="52" text-anchor="middle" fill="#888" font-size="6">Jump + push-up combo</text></svg>`
+  };
+  return icons[type]||icons.hiit;
+}
+
+function switchTab(t){
+  document.querySelectorAll('[data-tab]').forEach(b=>{b.style.background=b.dataset.tab===t?'#4ECDC4':'transparent';b.style.color=b.dataset.tab===t?'#000':'#666'});
+  ['workout','projector','diet'].forEach(id=>{document.getElementById('tab-'+id).classList.toggle('hide',id!==t)});
+  const titles={workout:'5-DAY FAT LOSS PLAN',projector:'WEIGHT LOSS PROJECTOR',diet:'DIET & MEAL PLAN'};
+  document.getElementById('mainTitle').textContent=titles[t];
+  if(t==='projector')updateProjection();
+  if(t==='diet')renderDiet();
+}
+
+// =========== WORKOUT ===========
+function renderWorkout(){
+  const w=workouts[activeDay];
+  let tabs='';
+  workouts.forEach((d,i)=>{
+    const active=i===activeDay;
+    tabs+=`<button class="day-btn" onclick="setDay(${i})" style="border:2px solid ${active?d.color:'#1a1a1a'};background:${active?d.color+'15':'#141414'};color:${active?d.color:'#666'}"><div style="font-size:15px">${d.emoji}</div><div>${d.day.replace('Day ','D')}</div></button>`;
+  });
+  document.getElementById('dayTabs').innerHTML=tabs;
+
+  const cc=w.exercises.filter((_,i)=>checkedEx[activeDay+'-'+i]).length;
+  const pct=Math.round((cc/w.exercises.length)*100);
+  const h=document.getElementById('dayHeader');
+  h.style.borderLeftColor=w.color;
+  h.innerHTML=`<div><div class="fs17 fw7 cfff">${w.emoji} ${w.title}</div><div class="fs12 c888 mt2">${w.focus}</div></div><div class="tar"><div class="fs20 fw7" style="color:${w.color}">${cc}/${w.exercises.length}</div><div style="height:4px;width:50px;background:#222;border-radius:2px;margin-top:4px;overflow:hidden"><div style="height:100%;width:${pct}%;background:${w.color};border-radius:2px;transition:width .4s"></div></div></div>`;
+
+  let list='';
+  w.exercises.forEach((ex,i)=>{
+    const done=checkedEx[activeDay+'-'+i];
+    const open=expandedEx===i;
+    list+=`<div class="card ex-card" style="border:${open?'1.5px solid '+w.color+'55':done?'1px solid '+w.color+'30':'1px solid #1e1e1e'};background:${done?w.color+'0a':'#141414'}">
+      <div class="ex-top" onclick="toggleEx(${i})">
+        <div class="ex-icon" style="background:${open?w.color+'20':'#1e1e1e'};color:${w.color}">${getIcon(ex.icon)}</div>
+        <div class="grow">
+          <div class="fw6 fs13" style="color:${done?'#777':'#eee'};text-decoration:${done?'line-through':'none'}">${ex.name}</div>
+          <div class="flex gap5 mt4 wrap">
+            <span class="ex-tag fw6" style="color:${w.color}">${ex.sets} sets</span>
+            <span class="ex-tag cbbb">${ex.reps}</span>
+            <span class="ex-tag c777">Rest ${ex.rest}</span>
+          </div>
+        </div>
+        <div class="arrow${open?' open':''}">▼</div>
+      </div>
+      ${open?`<div style="padding:0 14px 14px" class="fadeIn">
+        <div class="form-box" style="background:${w.color}08;border:1px solid ${w.color}20">
+          <div style="width:90px;height:90px;flex-shrink:0;color:${w.color};opacity:.9">${getIcon(ex.icon)}</div>
+          <div class="grow">
+            <div class="mono fs10 fw7 ls05 mb6" style="color:${w.color}">FORM GUIDE</div>
+            <div class="fs12" style="color:#ccc;line-height:1.5">${ex.note}</div>
+            <div class="flex gap6 mt8">
+              <span class="macro-pill fw7" style="background:${w.color};color:#000">${ex.sets} × ${ex.reps}</span>
+              ${ex.rest!=='—'?`<span class="macro-pill" style="background:#222;color:#aaa">⏱ ${ex.rest}</span>`:''}
+            </div>
+          </div>
+        </div>
+        <button class="done-btn" onclick="event.stopPropagation();checkEx(${i})" style="background:${done?'#222':w.color};color:${done?'#888':'#000'}">${done?'✓ Completed — Undo?':'✓ Mark Complete'}</button>
+      </div>`:''}
+    </div>`;
+  });
+  document.getElementById('exerciseList').innerHTML=list;
+}
+function setDay(d){activeDay=d;expandedEx=-1;renderWorkout()}
+function toggleEx(i){expandedEx=expandedEx===i?-1:i;renderWorkout()}
+function checkEx(i){const k=activeDay+'-'+i;checkedEx[k]=!checkedEx[k];renderWorkout()}
+
+// =========== PROJECTOR ===========
+function renderMonthBtns(){
+  let h='';
+  [1,2,3,4,5,6,9,12].forEach(m=>{
+    h+=`<button class="month-btn" onclick="setMonths(${m})" style="background:${months===m?'#4ECDC4':'#1e1e1e'};color:${months===m?'#000':'#888'}">${m} mo</button>`;
+  });
+  document.getElementById('monthBtns').innerHTML=h;
+}
+function setMonths(m){months=m;updateProjection()}
+function switchProjView(v){
+  projView=v;
+  document.querySelectorAll('[data-pv]').forEach(b=>{b.style.background=b.dataset.pv===v?'#4ECDC4':'transparent';b.style.color=b.dataset.pv===v?'#000':'#777'});
+  updateProjection();
+}
+function updateProjection(){
+  calories=+document.getElementById('calSlider').value;
+  document.getElementById('calSlider').style.background=`linear-gradient(to right,#4ECDC4 ${((calories-1500)/1000)*100}%,#2a2a2a ${((calories-1500)/1000)*100}%)`;
+  document.getElementById('calLabel').textContent=calories+' kcal';
+  const deficit=STATS.tdee-calories,wl=Math.round(((deficit*7)/7700)*100)/100;
+  const tw=months*4,weeks=[];
+  for(let i=0;i<=tw;i++)weeks.push({w:i,kg:Math.round(Math.max(STATS.weight-wl*i,50)*10)/10});
+  const totalLoss=Math.round((STATS.weight-weeks[weeks.length-1].kg)*10)/10;
+
+  document.getElementById('projStats').innerHTML=[
+    {l:'DEFICIT',v:deficit,u:'kcal/day',c:'#FF6B6B'},
+    {l:'PER WEEK',v:wl,u:'kg/week',c:'#F59E0B'},
+    {l:'TOTAL',v:totalLoss,u:`kg in ${months}mo`,c:'#4ECDC4'}
+  ].map(s=>`<div class="stat-card"><div class="fs10 c888 mb3">${s.l}</div><div class="fs20 fw7" style="color:${s.c}">${s.v}</div><div class="fs10 c555">${s.u}</div></div>`).join('');
+
+  renderMonthBtns();
+  const pc=document.getElementById('projContent');
+
+  if(projView==='curve'){
+    const cW=620,cH=240,pL=48,pR=18,pT=18,pB=30,iW_=cW-pL-pR,iH_=cH-pT-pB;
+    const maxW=STATS.weight+1,minW=Math.floor(weeks[weeks.length-1].kg-2),rng=maxW-minW;
+    const pts=weeks.map((d,i)=>({x:pL+(i/(weeks.length-1))*iW_,y:pT+((maxW-d.kg)/rng)*iH_,...d}));
+    let lp=pts.map((p,i)=>{if(!i)return`M ${p.x} ${p.y}`;const pr=pts[i-1];return`C ${pr.x+(p.x-pr.x)*.4} ${pr.y} ${pr.x+(p.x-pr.x)*.6} ${p.y} ${p.x} ${p.y}`}).join(' ');
+    const ap=lp+` L ${pts[pts.length-1].x} ${pT+iH_} L ${pts[0].x} ${pT+iH_} Z`;
+    const yT=[];const st=rng<=10?1:rng<=20?2:5;for(let v=Math.ceil(minW/st)*st;v<=maxW;v+=st)yT.push(v);
+    const xL=[];if(weeks.length<=9)weeks.forEach((_,i)=>xL.push({i,l:i?'W'+i:'Start'}));else for(let m=0;m<=months;m++){const wi=m*4;if(wi<=weeks.length-1)xL.push({i:wi,l:m?'M'+m:'Start'})}
+    let svgPts='';pts.forEach((p,i)=>{const show=pts.length<=12||i%(Math.ceil(pts.length/10))===0||i===pts.length-1||!i;if(show)svgPts+=`<circle cx="${p.x}" cy="${p.y}" r="4" fill="#4ECDC4" stroke="#0C0C0C" stroke-width="2.5"/>`});
+    pc.innerHTML=`<div class="card r16" style="padding:14px 8px 8px;overflow:hidden"><div class="ovxa">
+      <svg viewBox="0 0 ${cW} ${cH}" style="width:100%;min-width:300px;display:block">
+        ${yT.map(v=>{const y=pT+((maxW-v)/rng)*iH_;return`<line x1="${pL}" x2="${cW-pR}" y1="${y}" y2="${y}" stroke="#222" stroke-width=".5"/><text x="${pL-6}" y="${y+4}" text-anchor="end" fill="#555" font-size="10" font-family="DM Sans">${v}</text>`}).join('')}
+        <defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4ECDC4" stop-opacity=".25"/><stop offset="100%" stop-color="#4ECDC4" stop-opacity=".02"/></linearGradient></defs>
+        <path d="${ap}" fill="url(#ag)"/><path d="${lp}" fill="none" stroke="#4ECDC4" stroke-width="2.5" stroke-linecap="round"/>
+        ${svgPts}
+        <text x="${pts[0].x}" y="${pts[0].y-10}" text-anchor="middle" fill="#FF6B6B" font-size="11" font-weight="700" font-family="DM Sans">${pts[0].kg}kg</text>
+        <text x="${pts[pts.length-1].x}" y="${pts[pts.length-1].y-10}" text-anchor="middle" fill="#4ECDC4" font-size="11" font-weight="700" font-family="DM Sans">${pts[pts.length-1].kg}kg</text>
+        ${xL.map(x=>`<text x="${pL+(x.i/(pts.length-1))*iW_}" y="${cH-6}" text-anchor="middle" fill="#555" font-size="10" font-family="DM Sans">${x.l}</text>`).join('')}
+      </svg></div>
+      <div class="flex between center mt8" style="background:#0C0C0C;border-radius:10px;padding:8px 12px">
+        <div><span class="fs12 c888">${months}mo: </span><span class="fs15 fw7">${STATS.weight}kg </span><span class="c555">→ </span><span class="fs15 fw7" style="color:#4ECDC4">${pts[pts.length-1].kg}kg</span></div>
+        <div style="background:#4ECDC420;padding:3px 10px;border-radius:8px;color:#4ECDC4;font-weight:700;font-size:14px">-${totalLoss}kg</div>
+      </div></div>`;
+  } else if(projView==='monthly'){
+    let h='<div class="flex col gap7">';
+    for(let m=0;m<months;m++){
+      const sW=weeks[m*4]?.kg??weeks[weeks.length-1].kg,eW=weeks[Math.min((m+1)*4,weeks.length-1)]?.kg??weeks[weeks.length-1].kg;
+      const lost=Math.round((sW-eW)*10)/10;
+      h+=`<div class="card p14"><div class="flex between center mb6"><div class="flex center gap10"><div style="width:34px;height:34px;border-radius:10px;background:#4ECDC418;display:flex;align-items:center;justify-content:center;color:#4ECDC4;font-weight:700;font-size:12px" class="mono">M${m+1}</div><div><div class="fs13 fw6">Month ${m+1}</div><div class="fs11 c666">${sW}kg → ${eW}kg</div></div></div><div class="fs17 fw7" style="color:#4ECDC4">-${lost}kg</div></div><div style="height:4px;background:#222;border-radius:2px;overflow:hidden"><div style="height:100%;width:${Math.min((lost/4)*100,100)}%;background:linear-gradient(90deg,#4ECDC4,#4ECDC488);border-radius:2px"></div></div></div>`;
+    }
+    const bmi=(weeks[weeks.length-1].kg/(1.7*1.7)).toFixed(1);
+    h+=`<div class="card" style="background:#4ECDC410;border-color:#4ECDC430;padding:14px"><div class="flex between center"><div><div class="fs13 fw6" style="color:#4ECDC4">Total transformation</div><div class="fs11 c888 mt2">${months} month${months>1?'s':''} consistent</div></div><div class="mono fs26 fw7" style="color:#4ECDC4">-${totalLoss}kg</div></div><div class="flex gap8 mt10"><div class="grow tac" style="background:#0C0C0C;border-radius:8px;padding:6px 10px"><div class="fs10 c666">FROM</div><div class="fs15 fw7" style="color:#FF6B6B">${STATS.weight}kg</div></div><div class="flex center c555">→</div><div class="grow tac" style="background:#0C0C0C;border-radius:8px;padding:6px 10px"><div class="fs10 c666">TO</div><div class="fs15 fw7" style="color:#4ECDC4">${weeks[weeks.length-1].kg}kg</div></div><div class="flex center c555">→</div><div class="grow tac" style="background:#0C0C0C;border-radius:8px;padding:6px 10px"><div class="fs10 c666">BMI</div><div class="fs15 fw7" style="color:#F59E0B">${bmi}</div></div></div></div></div>`;
+    pc.innerHTML=h;
+  } else {
+    pc.innerHTML=`<div class="flex col gap6">
+      ${[{m:'Month 1-2',d:'Face slims down, arms tone up, clothes feel looser',c:'#FF6B6B'},{m:'Month 2-3',d:'Upper belly starts flattening noticeably',c:'#F59E0B'},{m:'Month 3-5',d:'Visible core definition starts to appear',c:'#4ECDC4'},{m:'Month 5+',d:'Lower belly fat significantly reduced',c:'#A855F7'}].map(t=>`<div class="card p14 flex center gap12"><div style="width:8px;height:8px;border-radius:50%;background:${t.c};flex-shrink:0"></div><div><span class="fs12 fw7" style="color:${t.c}">${t.m}: </span><span class="fs12 c999">${t.d}</span></div></div>`).join('')}
+      <div class="card p14 mt4">
+        <div class="fs11 fw6 c888 ls05 mb8">HOW THE MATH WORKS</div>
+        ${[{l:'Your TDEE (burn/day)',v:STATS.tdee+' kcal',c:'#FF6B6B'},{l:'You eat (target)',v:calories+' kcal',c:'#F59E0B'},{l:'Daily deficit',v:deficit+' kcal',c:'#4ECDC4'},{l:'1 kg fat =',v:'7,700 kcal',c:'#888',border:true},{l:'Loss per week',v:wl+' kg',c:'#4ECDC4'},{l:'Total in '+months+' mo',v:totalLoss+' kg',c:'#4ECDC4'}].map(r=>`<div class="flex between" style="padding:5px 0;${r.border?'border-top:1px solid #222':''}"><span class="fs12 c999">${r.l}</span><span class="fs12 fw6" style="color:${r.c}">${r.v}</span></div>`).join('')}
+      </div>
+    </div>`;
+  }
+}
+
+// =========== DIET ===========
+let expandedMeal=-1;
+function switchDietView(v){
+  dietView=v;
+  document.querySelectorAll('[data-dv]').forEach(b=>{b.style.background=b.dataset.dv===v?'#4ECDC4':'transparent';b.style.color=b.dataset.dv===v?'#000':'#777'});
+  renderDiet();
+}
+function toggleMeal(i){expandedMeal=expandedMeal===i?-1:i;renderDiet()}
+
+function renderDiet(){
+  const totalCal=meals.reduce((s,m)=>s+m.cal,0);
+  const totalP=meals.reduce((s,m)=>s+m.protein,0);
+  const totalC=meals.reduce((s,m)=>s+m.carbs,0);
+  const totalF=meals.reduce((s,m)=>s+m.fat,0);
+  document.getElementById('dietCalTotal').textContent=totalCal.toLocaleString();
+  document.getElementById('macroCards').innerHTML=[
+    {l:'PROTEIN',v:totalP+'g',pct:Math.round((totalP*4/totalCal)*100)+'%',c:'#FF6B35'},
+    {l:'CARBS',v:totalC+'g',pct:Math.round((totalC*4/totalCal)*100)+'%',c:'#4ECDC4'},
+    {l:'FATS',v:totalF+'g',pct:Math.round((totalF*9/totalCal)*100)+'%',c:'#F59E0B'}
+  ].map(m=>`<div class="stat-card"><div class="fs10 c888 mb3">${m.l}</div><div class="fs20 fw7" style="color:${m.c}">${m.v}</div><div class="fs10 c555">${m.pct} of calories</div></div>`).join('');
+
+  const dc=document.getElementById('dietContent');
+
+  if(dietView==='meals'){
+    let h='<div class="flex col gap8">';
+    meals.forEach((meal,mi)=>{
+      const open=expandedMeal===mi;
+      h+=`<div class="meal-card" style="${open?'border-color:'+meal.color+'55':''}">
+        <div class="meal-header" onclick="toggleMeal(${mi})">
+          <div class="meal-time" style="background:${meal.color}18">${meal.emoji}</div>
+          <div class="grow">
+            <div class="flex between center">
+              <div>
+                <div class="fs14 fw6 cfff">${meal.name}</div>
+                <div class="fs11 c666 mt2">${meal.time}</div>
+              </div>
+              <div class="tar">
+                <div class="fs16 fw7" style="color:${meal.color}">${meal.cal}</div>
+                <div class="fs10 c555">kcal</div>
+              </div>
+            </div>
+            <div class="flex gap5 mt4">
+              <span class="macro-pill" style="background:#FF6B3515;color:#FF6B35">P: ${meal.protein}g</span>
+              <span class="macro-pill" style="background:#4ECDC415;color:#4ECDC4">C: ${meal.carbs}g</span>
+              <span class="macro-pill" style="background:#F59E0B15;color:#F59E0B">F: ${meal.fat}g</span>
+            </div>
+          </div>
+          <div class="arrow${open?' open':''}">▼</div>
+        </div>
+        ${open?`<div style="padding:0 14px 14px" class="fadeIn">
+          <div style="background:#0a0a0a;border-radius:12px;padding:12px 14px">
+            ${meal.foods.map(f=>`<div class="food-item">
+              <div style="font-size:22px;width:32px;text-align:center">${f.emoji}</div>
+              <div class="grow">
+                <div class="fs13 cfff">${f.name}</div>
+                <div class="flex gap6 mt3">
+                  <span class="fs10 c888">${f.cal} kcal</span>
+                  ${f.isProtein?`<span class="protein-badge">🔥 ${f.protein}g protein</span>`:`<span class="fs10 c555">${f.protein}g protein</span>`}
+                </div>
+              </div>
+            </div>`).join('')}
+          </div>
+        </div>`:''}
+      </div>`;
+    });
+    h+=`<div class="card" style="background:#FF6B3510;border-color:#FF6B3530;padding:14px">
+      <div class="flex between center">
+        <div><div class="fs14 fw6" style="color:#FF6B35">Daily protein total</div><div class="fs11 c888 mt2">Target: 130-150g for fat loss at 80kg</div></div>
+        <div><div class="mono fs26 fw7" style="color:#FF6B35">${totalP}g</div><div class="fs10 c555 tar">✓ On target</div></div>
+      </div>
+    </div></div>`;
+    dc.innerHTML=h;
+  } else if(dietView==='protein'){
+    let h='<div class="flex col gap7">';
+    h+=`<div class="card p14" style="border-left:4px solid #FF6B35">
+      <div class="fs14 fw6 cfff">Your daily protein target</div>
+      <div class="flex gap12 mt8">
+        <div class="grow tac" style="background:#0C0C0C;border-radius:8px;padding:8px"><div class="fs10 c666">MINIMUM</div><div class="fs18 fw7" style="color:#FF6B35">130g</div></div>
+        <div class="grow tac" style="background:#0C0C0C;border-radius:8px;padding:8px"><div class="fs10 c666">OPTIMAL</div><div class="fs18 fw7" style="color:#4ECDC4">150g</div></div>
+        <div class="grow tac" style="background:#0C0C0C;border-radius:8px;padding:8px"><div class="fs10 c666">PER MEAL</div><div class="fs18 fw7" style="color:#F59E0B">~30g</div></div>
+      </div>
+    </div>`;
+    proteinSources.forEach(p=>{
+      const barW=Math.min((p.per100g/35)*100,100);
+      h+=`<div class="card p14">
+        <div class="flex center gap12">
+          <div style="font-size:28px;width:40px;text-align:center">${p.emoji}</div>
+          <div class="grow">
+            <div class="flex between center">
+              <div class="fs14 fw6 cfff">${p.name}</div>
+              <div class="fw7" style="color:#FF6B35">${p.per100g}g<span class="fs10 c666 fw6"> /100g</span></div>
+            </div>
+            <div style="height:4px;background:#222;border-radius:2px;margin:6px 0;overflow:hidden">
+              <div style="height:100%;width:${barW}%;background:linear-gradient(90deg,#FF6B35,#FF6B3588);border-radius:2px"></div>
+            </div>
+            <div class="flex between">
+              <span class="fs11 c888">${p.serving}</span>
+              <span class="fs10 c555">${p.cal} kcal/100g</span>
+            </div>
+            <div class="fs11 mt4" style="color:#666;font-style:italic">💡 ${p.tip}</div>
+          </div>
+        </div>
+      </div>`;
+    });
+    h+='</div>';
+    dc.innerHTML=h;
+  } else {
+    dc.innerHTML=`<div class="flex col gap8">
+      ${[
+        {emoji:'🥩',title:'Protein timing',desc:'Eat 25-35g protein every 3-4 hours. Post-workout within 1 hour. Casein before bed for overnight recovery.',c:'#FF6B35'},
+        {emoji:'🍚',title:'Carb strategy',desc:'Eat most carbs around your workout (pre & post). Lower carb on rest days. Choose complex carbs: oats, brown rice, sweet potato.',c:'#4ECDC4'},
+        {emoji:'🥑',title:'Healthy fats',desc:'Don\'t cut fats below 40g/day — you need them for hormones. Get them from nuts, avocado, olive oil, fish.',c:'#F59E0B'},
+        {emoji:'🥦',title:'Volume eating',desc:'Fill half your plate with vegetables. They\'re low calorie, high fiber, and keep you full. Broccoli, spinach, capsicum are your friends.',c:'#22c55e'},
+        {emoji:'💧',title:'Hydration rules',desc:'3+ litres daily. Drink 500ml 30 min before meals — reduces hunger. Often thirst feels like hunger.',c:'#3B82F6'},
+        {emoji:'🚫',title:'Foods to limit',desc:'Cut sugary drinks, fried food, white bread, alcohol, processed snacks. These are calorie-dense with no nutritional benefit.',c:'#FF6B6B'},
+        {emoji:'📱',title:'Track everything',desc:'Use MyFitnessPal or similar app for first 2-3 weeks. After that you\'ll naturally know portion sizes.',c:'#A855F7'},
+        {emoji:'🍽️',title:'Meal prep tip',desc:'Cook chicken, rice, and vegetables in bulk on Sunday. Pack into containers for the week. Consistency beats perfection.',c:'#F59E0B'}
+      ].map(t=>`<div class="card p14 flex gap12" style="border-left:3px solid ${t.c}">
+        <div style="font-size:24px">${t.emoji}</div>
+        <div><div class="fs13 fw6 cfff">${t.title}</div><div class="fs12 c888 mt3" style="line-height:1.5">${t.desc}</div></div>
+      </div>`).join('')}
+    </div>`;
+  }
+}
+
+// Init
+renderWorkout();
+</script>
+</body>
+</html>
